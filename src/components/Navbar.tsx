@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, QrCode, ArrowUpRight } from "lucide-react";
-import logoIcon from '../../assets/logo/icon.png';
+import logoIcon from '/assets/logo/icon.png';
 
 interface NavbarProps {
   activeSection: string;
