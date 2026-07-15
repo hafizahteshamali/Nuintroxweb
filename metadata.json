@@ -1,0 +1,6 @@
+{
+  "name": "nuIntroX",
+  "description": "Professional animated portfolio and interactive landing page for nuIntroX, the digital e-card generator and instant sharing platform via QR code for business owners and employees.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
