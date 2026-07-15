@@ -18,8 +18,8 @@ import {
 // ==========================================
 // Replace the empty strings with the paths to your actual app screenshots.
 // Example: SCREEN_ONE_IMAGE = "/images/home_screen.png";
-const SCREEN_ONE_IMAGE = "../../assets/logo/login.png";
-const SCREEN_TWO_IMAGE = "../../assets/logo/Dashboard.png";
+const SCREEN_ONE_IMAGE = "/assets/logo/login.png";
+const SCREEN_TWO_IMAGE = "/assets/logo/Dashboard.png";
 
 interface PhoneProps {
   screenshotUrl?: string;
@@ -144,13 +144,13 @@ export default function AppSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full max-w-md lg:max-w-none relative">
               {/* Phone 1 – replace SCREEN_ONE_IMAGE with your screenshot */}
               <PhoneMockup
-                screenshotUrl="/assets/logo/login.png"
+                screenshotUrl={SCREEN_ONE_IMAGE}
                 fallbackTitle="nuIntroX App Screen 1"
               />
 
               {/* Phone 2 – replace SCREEN_TWO_IMAGE with your screenshot */}
               <PhoneMockup
-                screenshotUrl="/assets/logo/Dashboard.png"
+                screenshotUrl={SCREEN_TWO_IMAGE}
                 fallbackTitle="nuIntroX App Screen 2"
                 offsetY={true}
               />
