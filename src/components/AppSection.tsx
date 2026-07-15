@@ -144,13 +144,13 @@ export default function AppSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full max-w-md lg:max-w-none relative">
               {/* Phone 1 – replace SCREEN_ONE_IMAGE with your screenshot */}
               <PhoneMockup
-                screenshotUrl={SCREEN_ONE_IMAGE}
+                screenshotUrl="/assets/logo/login.png"
                 fallbackTitle="nuIntroX App Screen 1"
               />
 
               {/* Phone 2 – replace SCREEN_TWO_IMAGE with your screenshot */}
               <PhoneMockup
-                screenshotUrl={SCREEN_TWO_IMAGE}
+                screenshotUrl="/assets/logo/Dashboard.png"
                 fallbackTitle="nuIntroX App Screen 2"
                 offsetY={true}
               />
