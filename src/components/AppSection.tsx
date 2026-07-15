@@ -18,8 +18,8 @@ import {
 // ==========================================
 // Replace the empty strings with the paths to your actual app screenshots.
 // Example: SCREEN_ONE_IMAGE = "/images/home_screen.png";
-const SCREEN_ONE_IMAGE = "/assets/logo/login.png";
-const SCREEN_TWO_IMAGE = "/assets/logo/Dashboard.png";
+const SCREEN_ONE_IMAGE = "../../assets/logo/login.png";
+const SCREEN_TWO_IMAGE = "../../assets/logo/Dashboard.png";
 
 interface PhoneProps {
   screenshotUrl?: string;
