@@ -76,7 +76,7 @@ export default function Navbar({
             <div className="relative flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-brand-primary to-brand-secondary p-[1px] shadow-[0_0_15px_rgba(254,188,30,0.2)] group-hover:shadow-[0_0_20px_rgba(254,188,30,0.4)] transition-all">
               <div className="w-full h-full bg-black rounded-[11px] flex items-center justify-center overflow-hidden">
                 <img
-                  src="./assets/logo/icon.png"
+                  src="/assets/logo/icon.png"
                   alt="NubitSoft Logo"
                   className="w-full h-full object-contain p-0.5"
                 />
