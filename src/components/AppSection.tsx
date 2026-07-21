@@ -16,10 +16,11 @@ import {
 // ==========================================
 // CONFIGURATION: SET YOUR REAL APP IMAGES HERE
 // ==========================================
-// Replace the empty strings with the paths to your actual app screenshots.
-// Example: SCREEN_ONE_IMAGE = "/images/home_screen.png";
 const SCREEN_ONE_IMAGE = "/assets/logo/login.png";
 const SCREEN_TWO_IMAGE = "/assets/logo/Dashboard.png";
+
+// ✅ NUBIT LOGO FOR QR CODE CENTER
+const NUBIT_LOGO = "/assets/logo/nubit_logo.jpg";
 
 interface PhoneProps {
   screenshotUrl?: string;
@@ -55,7 +56,7 @@ function PhoneMockup({
       <div className="flex-1 bg-[#09090a] rounded-[32px] overflow-hidden relative flex flex-col p-4 pt-7 select-none">
         {screenshotUrl ? (
           <img
-            src={screenshotUrl} // ✅ Now uses the prop you pass
+            src={screenshotUrl}
             alt={fallbackTitle}
             className="w-full h-full object-cover rounded-[22px]"
             referrerPolicy="no-referrer"
@@ -81,7 +82,6 @@ function PhoneMockup({
 export default function AppSection() {
   const [copiedLink, setCopiedLink] = useState(false);
 
-  // Link for the QR redirection simulation or direct app acquisition
   const rawDownloadUrl = `https://nuintrox.nubitsoft.com/get`;
   const qrCodeApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(rawDownloadUrl)}`;
 
@@ -142,13 +142,10 @@ export default function AppSection() {
           {/* Left Column: Phone Mockups with your app images */}
           <div className="lg:col-span-6 flex justify-center order-2 lg:order-1 mt-10 lg:mt-0">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full max-w-md lg:max-w-none relative">
-              {/* Phone 1 – replace SCREEN_ONE_IMAGE with your screenshot */}
               <PhoneMockup
                 screenshotUrl={SCREEN_ONE_IMAGE}
                 fallbackTitle="nuIntroX App Screen 1"
               />
-
-              {/* Phone 2 – replace SCREEN_TWO_IMAGE with your screenshot */}
               <PhoneMockup
                 screenshotUrl={SCREEN_TWO_IMAGE}
                 fallbackTitle="nuIntroX App Screen 2"
@@ -160,7 +157,6 @@ export default function AppSection() {
           {/* Right Column: Premium QR Code & Device Installation Cards */}
           <div className="lg:col-span-6 space-y-8 order-1 lg:order-2">
             <div className="p-8 sm:p-10 rounded-3xl bg-zinc-950/80 border border-zinc-900 shadow-2xl relative overflow-hidden backdrop-blur-xl">
-              {/* Outer corner glow */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/10 rounded-full blur-2xl" />
 
               <div className="space-y-6">
@@ -178,17 +174,24 @@ export default function AppSection() {
                   </p>
                 </div>
 
-                {/* Centered QR Box */}
+                {/* ✅ UPDATED: Centered QR Box with Nubit Logo in Center */}
                 <div className="flex flex-col sm:flex-row items-center gap-6 p-5 rounded-2xl bg-black border border-zinc-900">
-                  <div className="p-3 bg-white rounded-2xl relative border-2 border-brand-primary shrink-0">
+                  <div className="relative p-3 bg-white rounded-2xl border-2 border-brand-primary shrink-0">
+                    {/* QR Code Image */}
                     <img
                       src={qrCodeApiUrl}
                       alt="Scan to download"
                       className="w-32 h-32"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 m-auto w-8 h-8 bg-black border border-brand-primary rounded-lg flex items-center justify-center font-display font-black text-brand-primary text-xs shadow-lg">
-                      νX
+                    {/* ✅ Nubit Logo in Center - Using actual image */}
+                    <div className="absolute inset-0 m-auto w-12 h-12 rounded-lg overflow-hidden border-2 border-brand-primary shadow-lg bg-white flex items-center justify-center">
+                      <img
+                        src={NUBIT_LOGO}
+                        alt="Nubit"
+                        className="w-[80%] h-[80%] object-contain"
+                        referrerPolicy="no-referrer"
+                      />
                     </div>
                   </div>
 
@@ -300,7 +303,7 @@ export default function AppSection() {
               </div>
             </div>
 
-            {/* Quick Benefits Checklist - Ultra Easy to Understand */}
+            {/* Quick Benefits Checklist */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 "100% Free digital e-cards for individuals",

@@ -174,73 +174,90 @@ export default function HeroSection({ onExploreApp }: HeroSectionProps) {
                 <div className="w-12 h-1 bg-zinc-800 rounded-full" />
               </div>
 
-              {/* Internal Screen Content */}
-              <div className="flex-1 bg-zinc-950 rounded-[30px] overflow-hidden relative flex flex-col p-4 pt-6 select-none">
-                {/* Simulated App Header */}
-                <div className="flex justify-between items-center mb-6 mt-2">
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-6 h-6 rounded bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center p-[0.5px]">
-                      <div className="w-full h-full bg-black rounded flex items-center justify-center">
-                        <span className="text-brand-primary text-[10px] font-extrabold">.NX</span>
-                      </div>
-                    </div>
-                    <span className="text-xs font-display font-semibold text-white">NuIntroX</span>
+              {/* Internal Screen Content -- App Splash Screen (Scan & Generate) */}
+              <div className="flex-1 bg-[#141414] rounded-[30px] overflow-hidden relative flex flex-col select-none">
+                {/* Fake status bar */}
+                <div className="flex justify-between items-center px-4 pt-3 pb-1 relative z-20">
+                  <span className="text-white text-[10px] font-semibold">11:34</span>
+                  <div className="flex items-center gap-1 text-white/80 text-[9px]">
+                    <span>📶</span>
+                    <span>🔋</span>
                   </div>
-                  <span className="px-2 py-0.5 rounded-full text-[9px] bg-brand-primary/10 text-brand-primary font-mono font-bold">LIVE PREVIEW</span>
                 </div>
 
-                {/* Simulated E-Card Inside Phone */}
+                {/* Ambient background circles */}
+                <div className="absolute -top-10 -left-10 w-40 h-40 rounded-full bg-brand-primary/5 blur-2xl pointer-events-none" />
+                <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-white/[0.03] blur-2xl pointer-events-none" />
+
+                {/* Center QR glyph */}
                 <motion.div
-                  className="rounded-2xl bg-gradient-to-br from-amber-400 via-brand-primary to-amber-600 p-5 shadow-lg relative overflow-hidden"
-                  animate={{ y: [0, -4, 0] }}
-                  transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                  className="flex-1 flex items-center justify-center relative z-10"
+                  animate={{ scale: [0.97, 1.02, 0.97] }}
+                  transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
                 >
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl pointer-events-none" />
-                  
-                  <div className="flex justify-between items-start mb-8">
-                    <div>
-                      <h4 className="font-display font-bold text-black text-lg tracking-tight leading-tight">Your multi e-cards in your pocket</h4>
+                  <div className="relative w-44 h-44">
+                    <svg viewBox="0 0 100 100" className="w-full h-full">
+                      {/* Outer L-shaped corner brackets */}
+                      <path d="M 10,30 L 10,15 C 10,12 12,10 15,10 L 30,10" stroke="#FEBC1E" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                      <path d="M 70,10 L 85,10 C 88,10 90,12 90,15 L 90,30" stroke="#FEBC1E" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                      <path d="M 10,70 L 10,85 C 10,88 12,90 15,90 L 30,90" stroke="#FEBC1E" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                      <path d="M 70,90 L 85,90 C 88,90 90,88 90,85 L 90,70" stroke="#FEBC1E" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
 
-                    </div>
-                    <span className="text-xs font-mono font-bold text-black border border-black/30 px-1.5 py-0.5 rounded">.Co</span>
-                  </div>
+                      {/* Top Left Square + Dot */}
+                      <rect x="20" y="20" width="22" height="22" rx="2" stroke="#FFFFFF" strokeWidth="5" fill="none" />
+                      <rect x="27.5" y="27.5" width="7" height="7" rx="1" fill="#FEBC1E" />
 
-                  <div className="space-y-1.5 pt-4 text-black border-t border-black/15">
-                    <p className="text-[10px] font-medium flex items-center gap-1.5">
+                      {/* Top Right Square + Dot */}
+                      <rect x="58" y="20" width="22" height="22" rx="2" stroke="#FFFFFF" strokeWidth="5" fill="none" />
+                      <rect x="65.5" y="27.5" width="7" height="7" rx="1" fill="#FEBC1E" />
 
-                    </p>
-                    <p className="text-[10px] font-medium flex items-center gap-1.5">
+                      {/* Bottom Left Square + Dot */}
+                      <rect x="20" y="58" width="22" height="22" rx="2" stroke="#FFFFFF" strokeWidth="5" fill="none" />
+                      <rect x="27.5" y="65.5" width="7" height="7" rx="1" fill="#FEBC1E" />
 
-                    </p>
-                    <p className="text-[10px] font-medium flex items-center gap-1.5">
+                      {/* Bottom Right scattered bits */}
+                      <rect x="58" y="58" width="6" height="6" rx="1" fill="#FFFFFF" />
+                      <rect x="70" y="58" width="10" height="6" rx="1" fill="#FFFFFF" />
+                      <rect x="58" y="70" width="6" height="10" rx="1" fill="#FFFFFF" />
+                      <rect x="70" y="70" width="6" height="6" rx="1" fill="#FFFFFF" />
+                      <rect x="80" y="70" width="4" height="4" rx="1" fill="#FEBC1E" />
+                      <rect x="70" y="80" width="4" height="4" rx="1" fill="#FEBC1E" />
+                      <rect x="80" y="80" width="4" height="4" rx="1" fill="#FEBC1E" />
 
-                    </p>
+                      {/* Horizontal scan line */}
+                      <path d="M 12,48 L 88,48" stroke="#FEBC1E" strokeWidth="4" strokeLinecap="round" fill="none" />
+                    </svg>
+
+                    {/* Glowing laser sweep - travels across the full QR height */}
+                    <motion.div
+                      className="absolute left-[7%] w-[86%] h-[3px] rounded-full bg-brand-primary shadow-[0_0_15px_3px_rgba(254,188,30,0.8)]"
+                      animate={{ top: ["6%", "94%", "6%"] }}
+                      transition={{ repeat: Infinity, duration: 2.4, ease: "easeInOut" }}
+                    />
                   </div>
                 </motion.div>
 
-                {/* Simulated Sharing Trigger QR Code */}
-                <div className="flex-1 flex flex-col items-center justify-center mt-6">
-                  <div className="p-3 bg-white rounded-2xl shadow-xl border-2 border-brand-primary/40 relative">
-                    {/* Simulated QR Code matrix */}
-                    <svg className="w-24 h-24 text-black" viewBox="0 0 100 100">
-                      <path d="M0,0 h30 v10 h-20 v20 h-10 z M70,0 h30 v30 h-10 v-20 h-20 z M0,70 h10 v20 h20 v10 h-30 z M70,100 h30 v-30 h-10 v20 h-20 z" fill="currentColor" />
-                      <rect x="15" y="15" width="15" height="15" fill="currentColor" />
-                      <rect x="70" y="15" width="15" height="15" fill="currentColor" />
-                      <rect x="15" y="70" width="15" height="15" fill="currentColor" />
-                      <rect x="42" y="42" width="16" height="16" fill="currentColor" />
-                      {/* Random spots for QR */}
-                      <rect x="35" y="15" width="5" height="10" fill="currentColor" />
-                      <rect x="45" y="25" width="10" height="5" fill="currentColor" />
-                      <rect x="15" y="45" width="10" height="5" fill="currentColor" />
-                      <rect x="70" y="45" width="10" height="10" fill="currentColor" />
-                      <rect x="45" y="70" width="15" height="5" fill="currentColor" />
-                      <rect x="70" y="70" width="5" height="10" fill="currentColor" />
-                    </svg>
-                    <div className="absolute inset-0 m-auto w-7 h-7 bg-black border border-brand-primary rounded flex items-center justify-center text-[10px] font-extrabold text-brand-primary">
-                      νX
-                    </div>
+                {/* Bottom curved white card */}
+                <div className="relative z-10 bg-transparent">
+                  <svg viewBox="0 0 280 24" className="block w-full" preserveAspectRatio="none">
+                    <path d="M 0,24 C 70,-4 210,-4 280,24 Z" fill="#FFFFFF" />
+                  </svg>
+                  <div className="bg-white border-white px-6 pt-1 pb-6 -mt-[1px] rounded-b-[27px] flex flex-col items-center">
+                    <h4 className="font-display font-extrabold text-black text-xl tracking-tight text-center">
+                      Scan &amp; Generate
+                    </h4>
+                    <p className="text-zinc-500 text-[10px] font-medium text-center leading-snug mt-2 max-w-[200px]">
+                      Your all-in-one QR code solution. Fast, easy, and secure.
+                    </p>
+
+                    <button
+                      onClick={onExploreApp}
+                      className="mt-4 w-11 h-11 rounded-full flex items-center justify-center border-2 border-black bg-gradient-to-br from-amber-300 via-brand-primary to-amber-500 shadow-[0_6px_16px_rgba(254,188,30,0.5)] active:scale-95 transition-transform"
+                      aria-label="Get started"
+                    >
+                      <ArrowRight className="w-5 h-5 text-black" strokeWidth={3} />
+                    </button>
                   </div>
-                  <span className="text-[11px] font-mono text-zinc-500 mt-3 tracking-widest uppercase">Tap to share</span>
                 </div>
               </div>
             </motion.div>
@@ -251,10 +268,10 @@ export default function HeroSection({ onExploreApp }: HeroSectionProps) {
                 key={card.id}
                 className={`absolute hidden md:block w-56 p-4 rounded-xl bg-gradient-to-br ${card.gradient} shadow-2xl z-30`}
                 style={{ rotate: `${card.rotate}deg` }}
-                initial={{ opacity: 0, x: idx === 0 ? -120 : 120, y: card.yOffset + 50 }}
+                initial={{ opacity: 0, x: idx === 0 ? -150 : 150, y: card.yOffset + 50 }}
                 animate={{ 
                   opacity: 1, 
-                  x: idx === 0 ? -150 : 150, 
+                  x: idx === 0 ? -200 : 200, 
                   y: [card.yOffset, card.yOffset - 15, card.yOffset]
                 }}
                 transition={{
